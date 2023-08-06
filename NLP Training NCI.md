@@ -16,7 +16,7 @@
 
 ```An agent is learning if it improves its performance after making observations about the world. Learning can range from the trivial, such as jotting down a shopping list, to the profound, as when Albert Einstein inferred a new theory of the universe. When the agent is a computer, we call it machine learning: a computer observes some data, builds a model based on the data, and uses the model as both a hypothesis about the world and a piece of software that can solve problems.```
 
-![[Pasted image 20230805185141.png]]
+![ML](2.png)
 
 So, Machine Learning a subset of AI where algorithms learn from data to make predictions or decisions without explicit programming for the task.
 ### Classification vs Regression
@@ -26,13 +26,13 @@ So, Machine Learning a subset of AI where algorithms learn from data to make pre
 
 ```Deep learning is a broad family of techniques for machine learning in which hypotheses take the form of complex algebraic circuits with tunable connection strengths. The word “deep” refers to the fact that the circuits are typically organized into many layers, which means that computation paths from inputs to outputs have many steps. Deep learning is currently the most widely used approach for applications such as visual object recognition, machine translation, speech recognition, speech synthesis, and image synthesis; it also plays a significant role in reinforcement learning applications```
 
-![[Pasted image 20230805184555.png]]
+![DL](1.png)
 
 ### Neural Networks
 
 ```Deep learning has its origins in early work that tried to model networks of neurons in the brain (McCulloch and Pitts, 1943) with computational circuits. For this reason, the networks trained by deep learning methods are often called neural networks, even though the resemblance to real neural cells and structures is superficial.```
 
-![[Pasted image 20230805190529.png]]
+![NN](3.png)
 
 So, Neural networks are a foundational concept in deep learning and are inspired by the workings of the human brain. With reference the above slide, using the formula `y1 = W1*x + b1` as a starting point, we can try to understand how they work.
 
@@ -75,21 +75,21 @@ So, Neural networks are a foundational concept in deep learning and are inspired
    
 In essence, a neural network works by repeatedly adjusting its weights and biases based on the error of its predictions, using the backpropagation algorithm and an optimization method like SGD, until the error reaches an acceptably low level or stops improving.
 
-![[Pasted image 20230805191434.png]]
+![NN2](4.png)
 
 ### Loss Function
 
-![[Screenshot 2023-08-05 at 7.22.35 pm.png]]
+![Loss Function](9.png)
 
 The concept revolves around gradient descent where the gradient (or derivative) of the loss function with respect to the network's weights is computed. This gradient essentially tells how much the weights should be adjusted to minimize the loss.
 ### Gradient and Backpropagation:
 
-![[Pasted image 20230805192858.png]]
+![Gradient and Backpropogation](5.png)
 
 1. **Understanding Gradients**:
 In the context of neural networks, a gradient is a vector that represents the direction and rate of fastest increase of a function. In this case, the function is the loss function, and it tells us how much the loss will change if we adjust our parameters (weights and biases) by a tiny amount. Gradients are computed using derivatives, which give us a measure of the rate of change.
 
-2. **Partial Derivatives**:
+1. **Partial Derivatives**:
 Since neural networks have multiple parameters, we need to understand how the loss changes concerning each parameter. This is where partial derivatives come in. A partial derivative represents the rate of change of a function concerning one of its variables, keeping the others constant.
 
 For instance, if we have a function \( f(x, y) \), then the partial derivative with respect to \( x \) tells us how \( f \) changes as \( x \) changes, keeping \( y \) constant.
@@ -99,7 +99,7 @@ In neural networks, the loss function's output is a composite function of severa
 
 Mathematically, if we have a composition of functions, say \( y = g(f(x)) \), then the derivative of \( y \) with respect to \( x \) is given by:
 
-![[Pasted image 20230805193246.png]]
+![Partial Derivitive](6.png)
 
 This rule becomes crucial for backpropagation, as we break down the gradient computation layer by layer.
 
@@ -108,10 +108,10 @@ This rule becomes crucial for backpropagation, as we break down the gradient com
 1. **From Loss Function to Input Direction**:
 Backpropagation is essentially applying the chain rule from calculus in a systematic manner, layer by layer, from the output (loss function) back to the input. This is why it's called "back" propagation.
 
- 2. **Storing Values for Each Step for Quick Read (Caching)**:
+ 1. **Storing Values for Each Step for Quick Read (Caching)**:
 During the forward pass, when input data is passed through the network, and outputs are generated layer by layer, we store (or cache) the intermediate values (like input, output, and activations of each layer). This caching is crucial because, during backpropagation, we use these cached values to compute the gradients without having to recompute them. This considerably speeds up the learning process.
 
-3. **Using the Parameters from Forward Propagation**:
+1. **Using the Parameters from Forward Propagation**:
 During backpropagation, the gradients for each layer are computed concerning the loss function. The gradients signify how much the parameters (weights and biases) of that specific layer need to be adjusted to reduce the overall error. Using cached values from the forward pass and the chain rule, these gradients are calculated.
 
 Let's break down the process for a simple feedforward neural network with one hidden layer:
@@ -131,9 +131,9 @@ After computing the gradients, we update the weights and biases using these grad
 
 ### Training Process
 
-![[Pasted image 20230805193509.png]]
+![Train1](7.png)
 
-![[Pasted image 20230805193525.png]]
+![Train2](8.png)
 
 ### References
 
